@@ -37,7 +37,7 @@ li a:hover, .nav-link:hover {
 
 nav {
     height: 90px;
-    margin: 70px 100px;
+    margin: 80px 100px;
     margin-top: 150px;
     transition: 0.4s ease-in;
 }
@@ -79,8 +79,20 @@ nav.sticky {
     height: 120vh;
 }
 /*****************************************/
+
+
 .sectiondois{
+    position: relative;
     background-color: rgb(247, 245, 245);
+    padding: 7rem 0;
+}
+.sectiondois::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient( transparent, rgb(247, 245, 245));
+    top: -120px;
+    height: 120px;
+    width: 100%;
 }
 .sectiondois h2{
     color: rgb(193, 14, 14);
@@ -113,15 +125,16 @@ nav.sticky {
 .flip-card:hover .flip-card-inner{
     transform: rotateY(180deg);
 }
+
 /******************************************/
 .sectiontres{
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     background-color: rgb(196, 11, 11);
 }
 .bg{
     width: 80%;
-    padding-top: 200px;
+    padding-top: 150px;
     background-color: rgba(255, 255, 255, 0.373);
 }
 /******************************************/
@@ -136,5 +149,81 @@ footer{
     height: 20vh;
     background-color: rgb(93, 91, 91);
 }
+/*********** HERO ***************/
+.sectionum {
+    min-height: 130vh;
+    background-image: url("../assets/images/aps-background-image.jpg");
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.sectionum .light-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.6;
+}
+
+.sectionum .container {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.sectionum .svg-group {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.sectionum .svg-group #processor-svg {
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    transform: rotate(-10deg);
+}
+
+.sectionum .svg-group #chart-svg {
+    width: 100px;
+    position: absolute;
+    top: 500px;
+    left: 200px;
+}
+
+.sectionum .svg-group #code-svg {
+    width: 150px;
+    position: absolute;
+    top: 600px;
+}
+
+.sectionum .hero-content {
+    border-radius: 50%;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 80px 100px rgba(255, 255, 255, 0.6);
+}
+
+.hero-content-text {
+    position: relative;
+}
+
+.sectionum .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.sectionum .hero-content span {
+    color: rgb(185, 38, 38);
+}
+
 
 
