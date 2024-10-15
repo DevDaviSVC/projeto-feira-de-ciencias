@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 1000px;
+}
+@font-face {
+        font-family: 'Teko';
+        src: url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+    }
+
+.Etim{
+    color: rgb(185, 38, 38);
+}
+.Etim span{
+    color: rgb(55, 55, 55);
+}
+.EtecLogo{
+    height: 60px;
+}
+li {
+    padding-right: 10px;
+}
+
+a {
+    font-size: 14px;
+    font-family: 'Teko', sans-serif;
+    border-radius: 5px;
+}
+
+li a:hover, .nav-link:hover {
+    background-color: rgb(185, 38, 38);
+    border-radius: 5px;
+    color: white;
+}
+
+nav {
+    height: 90px;
+    margin: 70px 100px;
+    margin-top: 150px;
+    transition: 0.4s ease-in;
+}
+
+nav.sticky {
+    
+    margin: 10px;
+    height: 90px;
+}
+
+.navbar-custom {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+}
+
+.nav-link {
+    color: black;
+}
+.selected{
+    background-color: rgb(185, 38, 38);
+    color: white;
+}
+.nav-items {
+    padding-left: 1.5rem;
+}
+
+.nav-display{
+    display: flex;
+    flex-direction: column;
+}
+.current{
+    display: none;
+    transition: 0.3s ease-in-out;
+}
+/***************************************/
+.sectionum{
+    width: 100%;
+    height: 120vh;
+}
+/*****************************************/
+.sectiondois{
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(243, 241, 241);
+}
+/******************************************/
+.sectiontres{
+    width: 100%;
+    height: 40vh;
+    background-color: rgb(196, 11, 11);
+}
+/******************************************/
+.sectionquatro{
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(243, 241, 241);
+}
+/******************************************/
+footer{
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(93, 91, 91);
+}
+
+
