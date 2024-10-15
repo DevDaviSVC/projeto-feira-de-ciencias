@@ -39,11 +39,11 @@ nav {
     height: 90px;
     margin: 70px;
     margin-top: 150px;
-    transition: 0.2s ease-in-out;
+    transition: 0.4s ease-in;
 }
 
 nav.sticky {
-    transition: 0.4s ease-in;
+    
     margin: 10px;
     height: 90px;
 }
@@ -68,6 +68,10 @@ nav.sticky {
 .nav-display{
     display: flex;
     flex-direction: column;
+}
+.current{
+    display: none;
+    transition: 0.3s ease-in-out;
 }
 /***************************************/
 .sectionum{
