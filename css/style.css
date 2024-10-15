@@ -80,15 +80,49 @@ nav.sticky {
 }
 /*****************************************/
 .sectiondois{
+    background-color: rgb(247, 245, 245);
+}
+.sectiondois h2{
+    color: rgb(193, 14, 14);
+}
+.flip-card{
+    margin: auto;
+    height: 300px;
+}
+.flip-card-front{
+    background-color: white;
+}
+.flip-card-back{
+    background-color: #d54317;
+    color: white;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+.flip-card-inner{
+    position: relative;
+    height: 100%;
+    transition: transform 0.7s ease-in;
+    transform-style: preserve-3d;
+}
+.flip-card-back, .flip-card-front{
+    position: absolute;
     width: 100%;
-    height: 80vh;
-    background-color: rgb(243, 241, 241);
+    height: 100%;
+    backface-visibility: hidden;
+}
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
 }
 /******************************************/
 .sectiontres{
     width: 100%;
     height: 40vh;
     background-color: rgb(196, 11, 11);
+}
+.bg{
+    width: 80%;
+    padding-top: 200px;
+    background-color: rgba(255, 255, 255, 0.373);
 }
 /******************************************/
 .sectionquatro{
