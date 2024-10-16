@@ -84,7 +84,7 @@ nav.sticky {
 .sectiondois{
     position: relative;
     background-color: rgb(247, 245, 245);
-    padding: 7rem 0;
+    padding: 7rem ;
 }
 .sectiondois::before {
     content: "";
@@ -95,70 +95,27 @@ nav.sticky {
     width: 100%;
 }
 .sectiondois h2{
+    font-size: 4rem;
+    text-align: center;
     color: rgb(193, 14, 14);
 }
-.flip-card{
-    margin: auto;
-    height: 300px;
+.atividade_single{
+    background-color: rgba(255, 0, 0, 0.451);
+    width: 40%;
+    padding: 3rem;
+    border-radius: 10px;
 }
-.flip-card-front{
-    background-color: white;
-}
-.flip-card-back{
-    background-color: #d51717;
+.atividade_single p{
     color: white;
-    transform: rotateY(180deg);
-    z-index: 1;
 }
-.flip-card-inner{
-    position: relative;
-    height: 100%;
-    transition: transform 0.7s ease-in;
-    transform-style: preserve-3d;
-}
-.flip-card-back, .flip-card-front{
-    position: absolute;
+.foto_atividade{
     width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-.flip-card:hover .flip-card-inner{
-    transform: rotateY(180deg);
 }
 
 /******************************************/
-.sectiontres{
-    width: 100%;
-    background-color: rgb(196, 11, 11);
-    color: rgb(242, 241, 241);
-}
-.bg{
-    width: 70%;
-    padding:2%;
-    background-color: rgba(255, 255, 255, 0.373);
-}
-.icon_tec{
-    width: 10%;
-    transition: transform 0.4s ease-in-out;
-}
-.icon_tec:hover{
-    transform: scale(1.1);
-}
+
 /******************************************/
-.sectionquatro{
-    width: 100%;
-    height: 80vh;
-    background-color: rgb(255, 255, 255);
-}
-.sectionquatro > h2{
-    color: #d54317;
-}
-.sectionquatro .img_mercado_trabalho{
-    height: 50vh;
-    background-color: red;
-    background-image: url('../assets/images/mercado_de_trabalho.jpg');
-    background-size: 100% 100%;
-}
+
 /******************************************/
 footer{
     width: 100%;
