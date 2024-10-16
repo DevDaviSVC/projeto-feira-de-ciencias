@@ -84,7 +84,7 @@ nav.sticky {
 .sectiondois{
     position: relative;
     background-color: rgb(247, 245, 245);
-    padding: 7rem ;
+    padding: 7rem 0;
 }
 .sectiondois::before {
     content: "";
