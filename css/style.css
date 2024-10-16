@@ -129,19 +129,35 @@ nav.sticky {
 /******************************************/
 .sectiontres{
     width: 100%;
-    height: 30vh;
     background-color: rgb(196, 11, 11);
+    color: rgb(242, 241, 241);
 }
 .bg{
-    width: 80%;
-    padding-top: 150px;
+    width: 70%;
+    padding:2%;
     background-color: rgba(255, 255, 255, 0.373);
+}
+.icon_tec{
+    width: 10%;
+    transition: transform 0.4s ease-in-out;
+}
+.icon_tec:hover{
+    transform: scale(1.1);
 }
 /******************************************/
 .sectionquatro{
     width: 100%;
     height: 80vh;
-    background-color: rgb(243, 241, 241);
+    background-color: rgb(255, 255, 255);
+}
+.sectionquatro > h2{
+    color: #d54317;
+}
+.sectionquatro .img_mercado_trabalho{
+    height: 50vh;
+    background-color: red;
+    background-image: url('../assets/images/mercado_de_trabalho.jpg');
+    background-size: 100% 100%;
 }
 /******************************************/
 footer{
@@ -151,6 +167,7 @@ footer{
 }
 /*********** HERO ***************/
 .sectionum {
+    overflow: hidden;
     min-height: 130vh;
     background-image: url("../assets/images/aps-background-image.jpg");
     background-size: cover;
