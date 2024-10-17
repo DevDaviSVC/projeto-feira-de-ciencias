@@ -2,34 +2,52 @@
     margin: 0;
     padding: 0;
 }
-body{
-    height: 1000px;
-}
-@font-face {
-        font-family: 'Teko';
-        src: url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
-    }
 
-.Etim{
+body {
+    min-height: 100vh;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+:root {
+    --cinza-texto-base: #666;
+    --vermelho-base: #b20000
+}
+
+.container {
+    max-width: 1600px;
+    width: 96%;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+.Etim {
     color: rgb(185, 38, 38);
 }
-.Etim span{
+
+.Etim span {
     color: rgb(55, 55, 55);
 }
-.EtecLogo{
+
+.EtecLogo {
     height: 60px;
 }
+
 li {
     padding-right: 10px;
 }
 
 a {
     font-size: 14px;
-    font-family: 'Teko', sans-serif;
     border-radius: 5px;
 }
 
-li a:hover, .nav-link:hover {
+li a:hover,
+.nav-link:hover {
     background-color: rgb(185, 38, 38);
     border-radius: 5px;
     color: white;
@@ -37,13 +55,12 @@ li a:hover, .nav-link:hover {
 
 nav {
     height: 90px;
-    margin: 80px 100px;
+    margin: 70px 100px;
     margin-top: 150px;
-    transition: 0.3s ease-in;
+    transition: 0.4s ease-in;
 }
 
 nav.sticky {
-    
     margin: 10px;
     height: 90px;
 }
@@ -57,22 +74,26 @@ nav.sticky {
 .nav-link {
     color: black;
 }
-.selected{
+
+.selected {
     background-color: rgb(185, 38, 38);
     color: white;
 }
+
 .nav-items {
     padding-left: 1.5rem;
 }
 
-.nav-display{
+.nav-display {
     display: flex;
     flex-direction: column;
 }
-.current{
+
+.current {
     display: none;
     transition: 0.3s ease-in-out;
 }
+
 /***************************************/
 .sectionum{
     width: 100%;
@@ -150,7 +171,7 @@ nav.sticky {
     height: 80vh;
     background-color: rgb(255, 255, 255);
 }
-.sectionquatro > h2{
+.sectionquatro .container > h2{
     color: #d54317;
 }
 .sectionquatro .img_mercado_trabalho{
@@ -160,11 +181,7 @@ nav.sticky {
     background-size: 100% 100%;
 }
 /******************************************/
-footer{
-    width: 100%;
-    height: 20vh;
-    background-color: rgb(93, 91, 91);
-}
+
 /*********** HERO ***************/
 .sectionum {
     overflow: hidden;
@@ -242,5 +259,44 @@ footer{
     color: rgb(185, 38, 38);
 }
 
+footer {
+    width: 100%;
+    background-color: var(--cinza-texto-base);
+    padding: 4rem 0;
+    color: rgb(230, 230, 230);
+}
 
+footer h2 {
+    font-size: 1rem;
+    color: white;
+    font-weight: normal;
+}
 
+footer .row h2 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: normal;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer .desenvolvedores li {
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+footer .desenvolvedores li:hover {
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(196, 11, 11);
+    border-radius: 3px;
+}
