@@ -105,7 +105,7 @@ nav.sticky {
     background-color: white;
 }
 .flip-card-back{
-    background-color: #d51717;
+    background-color: #d54317;
     color: white;
     transform: rotateY(180deg);
     z-index: 1;
@@ -241,8 +241,6 @@ footer{
 .sectionum .hero-content span {
     color: rgb(185, 38, 38);
 }
-/**********************************************/
-
 
 
 
