@@ -6,6 +6,18 @@
 body {
     min-height: 100vh;
     font-family: Montserrat, Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+:root {
+    --cinza-texto-base: #666;
+    --vermelho-base: #b20000
+}
+
+.container {
+    max-width: 1600px;
+    width: 96%;
+    margin: 0 auto;
 }
 
 @font-face {
@@ -49,7 +61,6 @@ nav {
 }
 
 nav.sticky {
-
     margin: 10px;
     height: 90px;
 }
@@ -84,37 +95,201 @@ nav.sticky {
 }
 
 /***************************************/
-.sectionum {
+.sectionum{
     width: 100%;
     height: 120vh;
 }
-
 /*****************************************/
-.sectiondois {
+
+
+.sectiondois{
+    position: relative;
+    background-color: rgb(247, 245, 245);
+    padding: 7rem 0;
+}
+.sectiondois::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient( transparent, rgb(247, 245, 245));
+    top: -120px;
+    height: 120px;
     width: 100%;
-    height: 80vh;
-    background-color: rgb(243, 241, 241);
+}
+.sectiondois h2{
+    color: rgb(193, 14, 14);
+}
+.flip-card{
+    margin: auto;
+    height: 300px;
+}
+.flip-card-front{
+    background-color: white;
+}
+.flip-card-back{
+    background-color: #d54317;
+    color: white;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+.flip-card-inner{
+    position: relative;
+    height: 100%;
+    transition: transform 0.7s ease-in;
+    transform-style: preserve-3d;
+}
+.flip-card-back, .flip-card-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
 }
 
 /******************************************/
-.sectiontres {
+.sectiontres{
     width: 100%;
-    height: 40vh;
     background-color: rgb(196, 11, 11);
+    color: rgb(242, 241, 241);
 }
-
+.bg{
+    width: 70%;
+    padding:2%;
+    background-color: rgba(255, 255, 255, 0.373);
+}
+.icon_tec{
+    width: 10%;
+    transition: transform 0.4s ease-in-out;
+}
+.icon_tec:hover{
+    transform: scale(1.1);
+}
 /******************************************/
-.sectionquatro {
+.sectionquatro{
     width: 100%;
     height: 80vh;
-    background-color: rgb(243, 241, 241);
+    background-color: rgb(255, 255, 255);
+}
+.sectionquatro .container > h2{
+    color: #d54317;
+}
+.sectionquatro .img_mercado_trabalho{
+    height: 50vh;
+    background-color: red;
+    background-image: url('../assets/images/mercado_de_trabalho.jpg');
+    background-size: 100% 100%;
+}
+/******************************************/
+
+/*********** HERO ***************/
+.sectionum {
+    overflow: hidden;
+    min-height: 130vh;
+    background-image: url("../assets/images/aps-background-image.jpg");
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
 }
 
-/******************************************/
+.sectionum .light-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.6;
+}
+
+.sectionum .container {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.sectionum .svg-group {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.sectionum .svg-group #processor-svg {
+    width: 200px;
+    position: absolute;
+    top: 300px;
+    transform: rotate(-10deg);
+}
+
+.sectionum .svg-group #chart-svg {
+    width: 100px;
+    position: absolute;
+    top: 500px;
+    left: 200px;
+}
+
+.sectionum .svg-group #code-svg {
+    width: 150px;
+    position: absolute;
+    top: 600px;
+}
+
+.sectionum .hero-content {
+    border-radius: 50%;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 80px 100px rgba(255, 255, 255, 0.6);
+}
+
+.hero-content-text {
+    position: relative;
+}
+
+.sectionum .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.sectionum .hero-content span {
+    color: rgb(185, 38, 38);
+}
+
 footer {
     width: 100%;
-    height: 20vh;
-    background-color: rgb(93, 91, 91);
+    background-color: var(--cinza-texto-base);
+    padding: 4rem 0;
+    color: rgb(230, 230, 230);
+}
+
+footer h2 {
+    font-size: 1rem;
+    color: white;
+    font-weight: normal;
+}
+
+footer .row h2 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: normal;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer .desenvolvedores li {
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+footer .desenvolvedores li:hover {
+    color: white;
 }
 
 ::-webkit-scrollbar {
