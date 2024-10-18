@@ -1,142 +1,312 @@
-@font-face {
-    font-family: "Ubuntu Mono";
-    src: url("../fonts/Ubuntu_Sans_Mono/static/UbuntuSansMono-Regular.ttf");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Ubuntu Mono";
-    src: url("../fonts/Ubuntu_Sans_Mono/static/UbuntuSansMono-Bold.ttf");
-    font-weight: bold;
-}
-
-
-:root {
-    --color-1: #8552F2;
-    --color-2: #030140;
-    --color-3: #030526;
-    --color-4: #021373;
-    --color-5: #020F59;
-    --color-6: #f1f1f1;
-}
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Ubuntu Mono", Arial, Helvetica, sans-serif;
-    color: var(--color-6);
-    text-decoration: none;
 }
 
-body, html {
-    background-color: var(--color-3);
+body {
     min-height: 100vh;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+:root {
+    --cinza-texto-base: #666;
+    --vermelho-base: #b20000
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1600px;
+    width: 96%;
     margin: 0 auto;
-    width: 92%;
 }
 
-header {
-    padding: 2rem 0;
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
 }
 
-header .container {
+.Etim {
+    color: rgb(185, 38, 38);
+}
+
+.Etim span {
+    color: rgb(55, 55, 55);
+}
+
+.EtecLogo {
+    height: 60px;
+}
+
+li {
+    padding-right: 10px;
+}
+
+a {
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+li a:hover,
+.nav-link:hover {
+    background-color: rgb(185, 38, 38);
+    border-radius: 5px;
+    color: white;
+}
+
+nav {
+    height: 90px;
+    margin: 70px 100px;
+    margin-top: 150px;
+    transition: 0.4s ease-in;
+}
+
+nav.sticky {
+    margin: 10px;
+    height: 90px;
+}
+
+.navbar-custom {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.selected {
+    background-color: rgb(185, 38, 38);
+    color: white;
+}
+
+.nav-items {
+    padding-left: 1.5rem;
+}
+
+.nav-display {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
-header .logo {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
-
-header .logo img {
-    width: 50px;
-    cursor: pointer;
-}
-
-nav.mobile {
+.current {
     display: none;
+    transition: 0.3s ease-in-out;
 }
 
-nav.mobile #menu-icon img {
-    width: 40px;
+/***************************************/
+.sectionum{
+    width: 100%;
+    height: 120vh;
 }
+/*****************************************/
 
-nav.mobile .list {
+
+.sectiondois{
+    position: relative;
+    background-color: rgb(247, 245, 245);
+    padding: 7rem 0;
+}
+.sectiondois::before {
+    content: "";
     position: absolute;
-    left: 0;
-    width: 100vw;
-    background-color: #030140;
+    background-image: linear-gradient( transparent, rgb(247, 245, 245));
+    top: -120px;
+    height: 120px;
+    width: 100%;
 }
-
-nav.mobile ul {
-    padding: 2rem;
-    list-style-type: none;
+.sectiondois h2{
+    color: rgb(193, 14, 14);
 }
-
-nav.mobile ul li {
-    padding: .5rem 0;
+.flip-card{
+    margin: auto;
+    height: 300px;
 }
-
-nav.desktop {
+.flip-card-front{
+    background-color: white;
+}
+.flip-card-back{
+    background-color: #d54317;
+    color: white;
+    transform: rotateY(180deg);
+    z-index: 1;
+    padding: 8%;
     display: flex;
-    list-style-type: none;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.flip-card-inner{
+    position: relative;
+    height: 100%;
+    transition: transform 0.7s ease-in;
+    transform-style: preserve-3d;
+}
+.flip-card-back, .flip-card-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+.flip-card p{
+    font-size: 1.15rem;
+    text-align: center;
 }
 
-nav a {
-    color: var(--color-6);
-    transition: color 0.1s ease;
+/******************************************/
+.sectiontres{
+    width: 100%;
+    background-color: rgb(196, 11, 11);
+    color: rgb(242, 241, 241);
+}
+.bg{
+    width: 70%;
+    padding:2%;
+    background-color: rgba(255, 255, 255, 0.373);
+}
+.icon_tec{
+    width: 10%;
+    transition: transform 0.4s ease-in-out;
+}
+.icon_tec:hover{
+    transform: scale(1.1);
+}
+/******************************************/
+.sectionquatro{
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(255, 255, 255);
+}
+.sectionquatro .container > h2{
+    color: #d54317;
+}
+.sectionquatro .img_mercado_trabalho{
+    height: 50vh;
+    background-color: red;
+    background-image: url('../assets/images/mercado_de_trabalho.jpg');
+    background-size: 100% 100%;
+}
+/******************************************/
+
+/*********** HERO ***************/
+.first-section {
+    min-height: 100vh;
+    background-image: url("../assets/images/aps-background-image.jpg");
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.first-section .light-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.6;
+}
+
+.first-section .container {
+    padding: 4%;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.first-section .svg-group {
+    position: relative;
+    height: 100%;
+    width: 40%;
+}
+
+.first-section .svg-group #processor-svg {
+    width: 200px;
+    position: absolute;
+    top: 30%;
+    transform: rotate(-10deg);
+}
+
+.first-section .svg-group #chart-svg {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 200px;
+}
+
+.first-section .svg-group #code-svg {
+    width: 150px;
+    position: absolute;
+    top: 60%;
+}
+
+.first-section .hero-content {
+    border-radius: 50%;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 80px 100px rgba(255, 255, 255, 0.6);
+    width: 60%
+}
+
+.hero-content-text {
     position: relative;
 }
 
-nav a.active {
-    color: var(--color-1);
+.first-section .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
 }
 
-nav a.active::before {
-    content: '';
+.first-section .hero-content span {
+    color: rgb(185, 38, 38);
+}
+
+/***********************************/
+footer {
     width: 100%;
-    position: absolute;
-    height: 2px;
-    background-color: var(--color-1);
-    top: 110%;
-    opacity: 1;
+    background-color: var(--cinza-texto-base);
+    padding: 4rem 0;
+    color: rgb(230, 230, 230);
 }
 
-nav a:hover {
-    color: var(--color-1);
+footer h2 {
+    font-size: 1rem;
+    color: white;
+    font-weight: normal;
 }
 
-nav a::before {
-    content: '';
-    width: 100%;
-    position: absolute;
-    height: 2px;
-    background-color: var(--color-1);
-    top: 130%;
-    opacity: 0;
-    transition: top 0.2s ease, opacity 0.2s ease;
+footer .row h2 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: normal;
 }
 
-nav a:hover::before {
-    top: 110%;
-    opacity: 1;
+footer ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-@media screen and (max-width: 1030px) {
-    nav.mobile {
-        display: block;
-    }
+footer .desenvolvedores li {
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
 
-    nav.desktop {
-        display: none;
-    }
+footer .desenvolvedores li:hover {
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(196, 11, 11);
+    border-radius: 3px;
 }
