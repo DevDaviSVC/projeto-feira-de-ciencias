@@ -183,16 +183,15 @@ nav.sticky {
 /******************************************/
 
 /*********** HERO ***************/
-.sectionum {
-    overflow: hidden;
-    min-height: 130vh;
+.first-section {
+    min-height: 100vh;
     background-image: url("../assets/images/aps-background-image.jpg");
     background-size: cover;
     position: relative;
     overflow: hidden;
 }
 
-.sectionum .light-bg {
+.first-section .light-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -202,9 +201,10 @@ nav.sticky {
     opacity: 0.6;
 }
 
-.sectionum .container {
+.first-section .container {
+    padding: 4%;
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -212,53 +212,55 @@ nav.sticky {
     height: 100vh;
 }
 
-.sectionum .svg-group {
+.first-section .svg-group {
     position: relative;
     height: 100%;
-    width: 100%;
+    width: 40%;
 }
 
-.sectionum .svg-group #processor-svg {
+.first-section .svg-group #processor-svg {
     width: 200px;
     position: absolute;
-    top: 300px;
+    top: 30%;
     transform: rotate(-10deg);
 }
 
-.sectionum .svg-group #chart-svg {
+.first-section .svg-group #chart-svg {
     width: 100px;
     position: absolute;
-    top: 500px;
+    top: 50%;
     left: 200px;
 }
 
-.sectionum .svg-group #code-svg {
+.first-section .svg-group #code-svg {
     width: 150px;
     position: absolute;
-    top: 600px;
+    top: 60%;
 }
 
-.sectionum .hero-content {
+.first-section .hero-content {
     border-radius: 50%;
     font-size: 1.2rem;
     background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0 0 80px 100px rgba(255, 255, 255, 0.6);
+    width: 60%
 }
 
 .hero-content-text {
     position: relative;
 }
 
-.sectionum .hero-content h1 {
-    font-size: 4rem;
+.first-section .hero-content h1 {
+    font-size: 3.5rem;
     margin-bottom: 2rem;
     font-weight: 600;
 }
 
-.sectionum .hero-content span {
+.first-section .hero-content span {
     color: rgb(185, 38, 38);
 }
 
+/***********************************/
 footer {
     width: 100%;
     background-color: var(--cinza-texto-base);

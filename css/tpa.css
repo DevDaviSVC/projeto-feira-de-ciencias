@@ -15,7 +15,7 @@
 }
 
 .second-section .container > h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     font-weight: 600;
     color: rgb(185, 38, 38);
@@ -62,14 +62,16 @@
 }
 
 .project-single .project-images img {
-    width: 400px;
+    height: 400px;
     box-shadow: 0 0 20px -5px #111;
+    border-radius: 1%;
 }
 
 .project-single .project-images img:first-child {
-    transform: translate(90px, 10px) rotate(-10deg);
+    transform: translate(0px, 10px) ;
+    
 }
 
 .project-single .project-images img:last-child {
-    transform: translate(0px, -30px) rotate(10deg);
+    transform: translate(-40px, 30px) ;
 }
