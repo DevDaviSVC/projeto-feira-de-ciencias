@@ -46,7 +46,6 @@ a {
     border-radius: 5px;
 }
 
-li a:hover,
 .nav-link:hover {
     background-color: rgb(185, 38, 38);
     border-radius: 5px;
@@ -268,6 +267,11 @@ footer {
     color: rgb(230, 230, 230);
 }
 
+footer a {
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+}
+
 footer h2 {
     font-size: 1rem;
     color: white;
@@ -285,12 +289,14 @@ footer ul {
     padding: 0;
 }
 
-footer .desenvolvedores li {
+footer .desenvolvedores li a {
     transition: color 0.2s ease;
     cursor: pointer;
+    width: 100%;
+    display: inline-block;
 }
 
-footer .desenvolvedores li:hover {
+footer .desenvolvedores li:hover a {
     color: white;
 }
 
