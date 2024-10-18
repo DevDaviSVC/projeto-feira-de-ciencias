@@ -130,6 +130,10 @@ nav.sticky {
     color: white;
     transform: rotateY(180deg);
     z-index: 1;
+    padding: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .flip-card-inner{
     position: relative;
@@ -145,6 +149,10 @@ nav.sticky {
 }
 .flip-card:hover .flip-card-inner{
     transform: rotateY(180deg);
+}
+.flip-card p{
+    font-size: 1.15rem;
+    text-align: center;
 }
 
 /******************************************/
