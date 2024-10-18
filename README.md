@@ -1,1 +1,1 @@
-# DaviSVC's parts
+# Projeto Feira Tecnológica ETEC JMS - 2024
