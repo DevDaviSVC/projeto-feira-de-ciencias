@@ -7,3 +7,6 @@ O projeto consiste em um site com o objetivo de mostrar de forma breve como func
 **Colaboradores do projeto**
 - Davi M. Dolabella
 - Davi Souza
+
+See the project clicking on the link below ⤵ <br />
+[See the project](https://devdavisvc.github.io/projeto-feira-de-ciencias/)
