@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matérias - Desenvolvimento de Sistemas</title>
+
+    <!-- Importing styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .materias-section {
+            padding: 5rem 0;
+            background-color: rgb(247, 245, 245);
+            position: relative;
+        }
+
+        .materias-section::before {
+            content: "";
+            position: absolute;
+            background-image: linear-gradient(transparent, rgb(247, 245, 245));
+            top: -120px;
+            height: 120px;
+            width: 100%;
+        }
+
+        .year-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .year-btn {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            background: white;
+            color: #666;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .year-btn:hover {
+            background-color: rgb(185, 38, 38);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .year-btn.active {
+            background: rgb(185, 38, 38);
+            color: white;
+        }
+
+        .materias-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .year-info {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .year-info h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: rgb(185, 38, 38);
+            margin-bottom: 10px;
+        }
+
+        .year-info p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .materias-group {
+            margin-bottom: 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 7px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .materias-group h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: rgb(185, 38, 38);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid rgb(185, 38, 38);
+        }
+
+        .area-group {
+            margin-bottom: 30px;
+        }
+
+        .area-group h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .disciplinas-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .disciplina-item {
+            background: #f8f9fa;
+            padding: 18px 20px;
+            border-radius: 7px;
+            border-left: 4px solid rgb(185, 38, 38);
+            transition: all 0.3s ease;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .disciplina-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            background: white;
+        }
+
+        .disciplina-item.tecnica {
+            border-left-color: #d54317;
+        }
+
+        .tecnica-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .year-selector {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 20px;
+            }
+
+            .year-btn {
+                width: 100%;
+            }
+
+            .disciplinas-list,
+            .tecnica-list {
+                grid-template-columns: 1fr;
+            }
+
+            .materias-group {
+                padding: 20px;
+            }
+
+            .year-info h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-custom navbar-expand-lg bg-body-tertiary fixed-top px-3 py-2">
+            <div class="container">
+                <img src="assets/svg/EtecLogo.svg" class="EtecLogo ms-3">
+                <ul class="navbar-nav nav-items ms-auto mb-1 current" id="menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="aps.html" class="nav-link">ANÁLISE E PROJETO DE SISTEMAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tpa.html" class="nav-link">TÉCNICAS DE PROGRAMAÇÃO E ALGORITMOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pw.html" class="nav-link">PROGRAMAÇÃO WEB</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link selected">GRADE</a>
+                    </li>
+                </ul>
+                <h1 class="text-center Etim me-5" id="Etim">Grade Curricular</h1>
+            </div>
+        </nav>
+    </header>
+
+    <section class="first-section">
+        <div class="light-bg"></div>
+        <div class="container">
+            <div class="svg-group">
+                <img src="assets/svg/processor-svgrepo-com.svg" alt="processor-svg" id="processor-svg" />
+                <img src="assets/svg/chart-network-svgrepo-com.svg" alt="chart-svg" id="chart-svg" />
+                <img src="assets/svg/code-svgrepo-com.svg" alt="code-svg" id="code-svg" />
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-content-text">Grade Curricular <span>D.S.</span></h1>
+                <p class="hero-content-text">
+                    Conheça todas as matérias do curso Técnico em Desenvolvimento de Sistemas integrado ao Ensino Médio
+                    da ETEC. Selecione o ano para visualizar as disciplinas correspondentes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="materias-section">
+        <div class="container">
+            <div class="year-selector">
+                <button class="year-btn active" data-year="1">1º Ano</button>
+                <button class="year-btn" data-year="2">2º Ano</button>
+                <button class="year-btn" data-year="3">3º Ano</button>
+            </div>
+
+            <div class="materias-content" id="materias-content">
+                <!-- Conteúdo será inserido via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <div class="row mb-4">
+                <div class="apresentadores col-6">
+                    <h2>Apresentado por:</h2>
+                    <ul>
+                        <li>Vitor Matheus</li>
+                        <li>Davi Souza</li>
+                        <li>Yasmin Cirino</li>
+                        <li>Yasmin Lima</li>
+                        <li>Pedro Bosso</li>
+                        <li>Marcus Vinícius</li>
+                        <li>Lavínia</li>
+                    </ul>
+                </div>
+                <div class="desenvolvedores col-6">
+                    <h2>Desenvolvido por:</h2>
+                    <ul>
+                        <li><a target="_blank" href="https://github.com/davimdolabella">Davi Dolabella</a></li>
+                        <li><a target="_blank" href="https://github.com/DevDaviSVC">Davi Souza</a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2>
+                &copy; Todos os direitos reservados ao 2º Ano ETIM de Desenvolvimento de Sistemas 2025
+            </h2>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script>
+        const materiaData = {
+            "series": [
+                {
+                    "ano": 1,
+                    "nome": "1ª Série",
+                    "formacaoGeralBasica": {
+                        "materias": [
+                            {
+                                "area": "Linguagens e suas Tecnologias",
+                                "disciplinas": ["Língua Portuguesa", "Língua Inglesa", "Arte", "Educação Física"]
+                            },
+                            {
+                                "area": "Matemática e suas Tecnologias",
+                                "disciplinas": ["Matemática"]
+                            },
+                            {
+                                "area": "Ciências da Natureza e suas Tecnologias",
+                                "disciplinas": ["Biologia", "Física", "Química"]
+                            },
+                            {
+                                "area": "Ciências Humanas e Sociais Aplicadas",
+                                "disciplinas": ["História", "Geografia", "Filosofia", "Sociologia"]
+                            }
+                        ]
+                    },
+                    "formacaoTecnicaProfissional": {
+                        "materias": [
+                            "Projetos de Tecnologia da Informação e Comunicação",
+                            "Programação e Algoritmos",
+                            "Sistemas Embarcados e IoT",
+                            "Bancos de Dados I",
+                            "Programação Web I"
+                        ]
+                    }
+                },
+                {
+                    "ano": 2,
+                    "nome": "2ª Série",
+                    "formacaoGeralBasica": {
+                        "materias": [
+                            {
+                                "area": "Linguagens e suas Tecnologias",
+                                "disciplinas": ["Língua Portuguesa", "Língua Inglesa", "Arte", "Educação Física"]
+                            },
+                            {
+                                "area": "Matemática e suas Tecnologias",
+                                "disciplinas": ["Matemática"]
+                            },
+                            {
+                                "area": "Ciências da Natureza e suas Tecnologias",
+                                "disciplinas": ["Biologia", "Física", "Química"]
+                            },
+                            {
+                                "area": "Ciências Humanas e Sociais Aplicadas",
+                                "disciplinas": ["História", "Geografia", "Filosofia", "Sociologia"]
+                            }
+                        ]
+                    },
+                    "formacaoTecnicaProfissional": {
+                        "materias": [
+                            "Bancos de Dados II",
+                            "Programação Web II",
+                            "Análise e Projeto de Sistemas",
+                            "Projetos de Desenvolvimento de Sistemas",
+                            "Desenvolvimento de Sistemas I",
+                            "Programação de Aplicativos Mobile I"
+                        ]
+                    }
+                },
+                {
+                    "ano": 3,
+                    "nome": "3ª Série",
+                    "formacaoGeralBasica": {
+                        "materias": [
+                            {
+                                "area": "Linguagens e suas Tecnologias",
+                                "disciplinas": ["Língua Portuguesa", "Língua Inglesa", "Língua Espanhola", "Arte"]
+                            },
+                            {
+                                "area": "Matemática e suas Tecnologias",
+                                "disciplinas": ["Matemática"]
+                            },
+                            {
+                                "area": "Ciências da Natureza e suas Tecnologias",
+                                "disciplinas": ["Biologia", "Física", "Química"]
+                            },
+                            {
+                                "area": "Ciências Humanas e Sociais Aplicadas",
+                                "disciplinas": ["História", "Geografia", "Filosofia", "Sociologia"]
+                            }
+                        ]
+                    },
+                    "formacaoTecnicaProfissional": {
+                        "materias": [
+                            "Programação Web III",
+                            "Desenvolvimento de Sistemas II",
+                            "Programação de Aplicativos Mobile II",
+                            "Computação em Nuvem",
+                            "Conduta Profissional e Relações de Trabalho",
+                            "Planejamento e Desenvolvimento do Trabalho de Conclusão de Curso (TCC)"
+                        ]
+                    }
+                }
+            ]
+        };
+
+        function renderMaterias(ano) {
+            const serie = materiaData.series.find(s => s.ano === ano);
+            const content = document.getElementById('materias-content');
+
+            let html = `
+                <div class="year-info">
+                    <h2>${serie.nome}</h2>
+                    <p>Confira todas as disciplinas do ${ano}º ano do curso</p>
+                </div>
+
+                <div class="materias-group">
+                    <h3>Formação Técnica e Profissional</h3>
+                    <div class="tecnica-list">
+            `;
+
+            serie.formacaoTecnicaProfissional.materias.forEach(materia => {
+                html += `<div class="disciplina-item tecnica">${materia}</div>`;
+            });
+
+            html += `</div></div><div class="materias-group">
+                <h3>Formação Geral Básica</h3>`;
+
+            serie.formacaoGeralBasica.materias.forEach(materia => {
+                html += `
+                    <div class="area-group">
+                        <h4>${materia.area}</h4>
+                        <div class="disciplinas-list">
+                `;
+                materia.disciplinas.forEach(disciplina => {
+                    html += `<div class="disciplina-item">${disciplina}</div>`;
+                });
+                html += `</div></div>`;
+            });
+
+            html += `</div>`;
+            content.innerHTML = html;
+        }
+
+        document.querySelectorAll('.year-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                renderMaterias(parseInt(this.dataset.year));
+            });
+        });
+
+        renderMaterias(1);
+    </script>
+</body>
+
+</html>
